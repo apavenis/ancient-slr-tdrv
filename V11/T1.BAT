@@ -1,0 +1,5 @@
+@echo off
+TDRV /I
+IF ERRORLEVEL 1 GOTO DONE
+TimeSync.EXE
+:DONE

@@ -1,0 +1,17 @@
+*.EXE
+*.OBJ
+*.SYM
+*.SWP
+*.DSK
+*.BAK
+*.MAP
+*.LST
+*.LOG
+*.IDE
+*.DSW
+*.TD
+*.TDW
+*.~DE
+*.TR
+*.CSM
+ARH\*.*

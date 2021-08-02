@@ -1,0 +1,9 @@
+	.XList
+        include OUTPUT.INC
+	.List
+
+_TEXT	segment	byte public 'CODE'
+	assume  cs:_TEXT , ds:_TEXT
+
+_TEXT	ends
+	end

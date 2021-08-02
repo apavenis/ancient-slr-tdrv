@@ -1,0 +1,27 @@
+#******************************************************************************
+#       Makefile for TDRV.EXE and ASMLIB.LIB
+#******************************************************************************
+.SWAP
+
+all:
+        cd lib
+        bc /m asmlib.prj
+        cd ..\v11
+        bc /m tdrv.prj
+        cd ..
+
+clean:
+        del v11\*.bak
+        del lib\*.bak
+        del *.bak
+        del v11\*.obj
+        del v11\*.swp
+        del v11\*.map
+        del lib\*.obj
+        del lib\*.swp
+        del lib\*.lst
+
+archive:
+        del \output\tdrv.rar
+        call mk-rar -x@exclude.lst \output\tdrv.rar
+

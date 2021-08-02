@@ -1,0 +1,48 @@
+!short:NewLine            : outputs <CR> and <LF> to standard output
+
+Procedure : ^uNewLine^n
+Module    : ^uCHOUTP.ASM^n
+
+Outputs ^bCR^n and ^bLF^n to standard output using MD DOS function 2
+Arguments 		: none
+Registers changed       : AL
+Procedures called	: ^uPrintChar^n
+Min CPU			: 8086
+
+!short:PrintChar          : outputs character to standard output
+
+Procedure : ^uPrintChar^n
+Module    : ^uCHOUTP.ASM^n
+
+Outputs character specified in register ^bAL^n to standard output.
+^INT 21h^n function ^BAH=2^n is being used
+Arguments 		: none
+Registers changed	: none
+Procedures called	: none
+Min CPU			: 8086
+
+!short:PrintString	  : outputs zero terminates ASCII string to ^bstdout^n
+
+Procedure : ^uPrintString^n ( char near * ^bstr^n )
+Module	  : ^uSTROUTP.ASM^n
+
+Outputs zero terminated character string to standard output.
+Procedure cleans stack after returns.
+Procedures called	: PrintChar
+Registers changed	: AL
+Min CPU			: 8086
+
+^bExample^n :
+	push	Offset MSG
+	call	PrintString
+	....
+MSG	db	'Example',13,10,0
+
+!short:PrintHexWord	  : outputs register AX as hexadecimal number
+!short:PrintHexByte	  : outputs register AL as hexadecimal number
+!short:PrintHexDigit	  : outputs (AL&15) as hexadecimal digit
+
+!short:PrintFarPtr	  : outputs far pointer in hexadecimal form
+
+
+
